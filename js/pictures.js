@@ -254,6 +254,9 @@ var inputDoNotClose = function () {
 };
 inputForTags.addEventListener('focus', inputDoNotClose);
 
+var textArea = document.querySelector('.text__description');
+textArea.addEventListener('focus', inputDoNotClose);
+
 inputForTags.addEventListener('change', function (evt) {
   var input = evt.target;
   var inputValue = input.value.trim();
