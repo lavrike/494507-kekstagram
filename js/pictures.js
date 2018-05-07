@@ -213,9 +213,7 @@ scalePin.addEventListener('mousedown', function (evt) {
     if (coord.x > MAX_X) {
       coord.x = MAX_X;
     }
-
     scalePin.style.left = coord.x + 'px';
-
     var effectValue = coord.x / MAX_X;
 
     uploadEffectLevelVal.style.width = (effectValue * 100) + '%';
