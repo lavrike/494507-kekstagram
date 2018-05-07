@@ -249,9 +249,13 @@ inputForTags.addEventListener('input', function (evt) {
   evt.target.setCustomValidity('');
 });
 
+var inputDoNotClose = function () {
+  document.removeEventListener('keydown', imageEscPress);
+};
+inputForTags.addEventListener('focus', inputDoNotClose);
+
 inputForTags.addEventListener('change', function (evt) {
   var input = evt.target;
-
   var inputValue = input.value.trim();
   var tags = inputValue.split(' ');
   if (tags.length > 5) {
