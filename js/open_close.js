@@ -51,6 +51,14 @@
     window.util.isEscEvent(e, imageClose);
   });
 
+  var inputDoNotClose = function () {
+    document.removeEventListener('keydown', window.imageEscPress);
+  };
+  window.inputForTags = document.querySelector('.text__hashtags');
+  window.inputForTags.addEventListener('focus', inputDoNotClose);
+
+  var textArea = document.querySelector('.text__description');
+  textArea.addEventListener('focus', inputDoNotClose);
 
   var cancelButton = document.querySelector('.big-picture__cancel.cancel');
   cancelButton.addEventListener('click', function () {

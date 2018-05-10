@@ -3,7 +3,6 @@
 (function () {
   var submitForm = document.querySelector('.img-upload__form');
 
-  var inputForTags = document.querySelector('.text__hashtags');
   submitForm.addEventListener('submit', function (evt) {
     evt.preventDefault();
 
@@ -12,20 +11,11 @@
       submitForm.reset();
     }
   });
-  // предотвращение закрытия
-  inputForTags.addEventListener('input', function (evt) {
+  window.inputForTags.addEventListener('input', function (evt) {
     evt.target.setCustomValidity('');
   });
 
-  var inputDoNotClose = function () {
-    document.removeEventListener('keydown', imageEscPress);
-  };
-  inputForTags.addEventListener('focus', inputDoNotClose);
-
-  var textArea = document.querySelector('.text__description');
-  textArea.addEventListener('focus', inputDoNotClose);
-
-  inputForTags.addEventListener('change', function (evt) {
+  window.inputForTags.addEventListener('change', function (evt) {
     var input = evt.target;
     var inputValue = input.value.trim();
     var tags = inputValue.split(' ');
